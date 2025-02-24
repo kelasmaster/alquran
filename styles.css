@@ -69,8 +69,7 @@ header h1 {
 
 .ayah {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
     margin-bottom: 1rem;
     padding: 1rem;
     background: #fff;
@@ -81,12 +80,15 @@ header h1 {
 .ayah .arabic {
     font-size: 1.2rem;
     font-family: 'Amiri', serif;
-    margin-bottom: 0.5rem;
+    width: 48%; /* Arabic text takes up 48% of the width */
+    text-align: right; /* Align Arabic text to the right */
 }
 
 .ayah .translation {
     font-size: 1rem;
     color: #555;
+    width: 48%; /* Translation takes up 48% of the width */
+    text-align: left; /* Align translation to the left */
 }
 
 .hidden {
@@ -96,5 +98,15 @@ header h1 {
 @media (max-width: 768px) {
     .surah-item {
         width: 100%;
+    }
+
+    .ayah {
+        flex-direction: column;
+    }
+
+    .ayah .arabic,
+    .ayah .translation {
+        width: 100%;
+        text-align: center;
     }
 }
