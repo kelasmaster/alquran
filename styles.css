@@ -1,4 +1,5 @@
 /* styles.css */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +11,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    padding: 1rem;
 }
 
 header {
@@ -30,29 +32,34 @@ header h1 {
     display: block;
     border: none;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 #surah-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    gap: 1rem;
 }
 
 .surah-item {
     background: #fff;
-    margin: 0.5rem;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     width: 45%;
     text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.surah-item:hover {
+    transform: scale(1.05);
 }
 
 #ayah-display {
-    padding: 1rem;
     display: none;
+    padding: 1rem;
 }
 
 #ayah-display h2 {
@@ -62,18 +69,24 @@ header h1 {
 
 .ayah {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ayah .arabic {
     font-size: 1.2rem;
     font-family: 'Amiri', serif;
+    margin-bottom: 0.5rem;
 }
 
 .ayah .translation {
     font-size: 1rem;
-    text-align: right;
+    color: #555;
 }
 
 .hidden {
@@ -83,13 +96,5 @@ header h1 {
 @media (max-width: 768px) {
     .surah-item {
         width: 100%;
-    }
-
-    .ayah {
-        flex-direction: column;
-    }
-
-    .ayah .arabic {
-        text-align: center;
     }
 }
